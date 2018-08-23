@@ -1,0 +1,13 @@
+http://localhost:8080/oauth/authorize?response_type=code&client_id=demoApp&redirect_uri=http://baidu.com
+
+
+POST
+http://localhost:8080/oauth/token?grant_type=authorization_code&code=????&client_id=demoApp&client_secret=demoAppSecret&redirect_uri=http://baidu.com
+
+ArlM6B
+
+GET
+http://localhost:8080/api/blog/1?access_token=c80408d4-5afb-4f87-9538-9fb45b149941
+
+
+curl -i -X POST -H "Accept: application/json" -u "demoApp:demoAppSecret" http://localhost:8080/oauth/check_token?token=c80408d4-5afb-4f87-9538-9fb45b149941
