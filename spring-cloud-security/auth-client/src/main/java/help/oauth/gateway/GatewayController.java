@@ -20,23 +20,30 @@ public class GatewayController {
     }
 
     @GetMapping("/test1")
-    public String person1() 
+    public String test1() 
     {
         String personResourceUrl = "http://localhost:9001/person";
         return restOperations.getForObject(personResourceUrl, String.class);
     }
     
     @GetMapping("/test2")
-    public String person2() 
+    public String test2() 
     {
         String personResourceUrl = "http://localhost:9002/person";
         return restOperations.getForObject(personResourceUrl, String.class);
     }
     
     @GetMapping("/test3")
-    public String person3() 
+    public String test3() 
     {
         String personResourceUrl = "http://localhost:9002/callOtherServiceByTemplate";
         return restOperations.getForObject(personResourceUrl, String.class);
     }
+    @GetMapping("/test4")
+    public String test4() 
+    {
+        String personResourceUrl = "http://localhost:9002/callOtherServiceByFeign";
+        return restOperations.getForObject(personResourceUrl, String.class);
+    }
+    
 }
