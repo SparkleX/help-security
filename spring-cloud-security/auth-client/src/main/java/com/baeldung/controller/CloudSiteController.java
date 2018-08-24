@@ -19,12 +19,24 @@ public class CloudSiteController {
         return "Hello From Baeldung!";
     }
 
-    @GetMapping("/personInfo")
-    public ModelAndView person() {
-        ModelAndView mav = new ModelAndView("personinfo");
-        String personResourceUrl = "http://localhost:9000/person";
-        mav.addObject("person", restOperations.getForObject(personResourceUrl, String.class));
-        return mav;
+    @GetMapping("/person1")
+    public String person1() 
+    {
+        String personResourceUrl = "http://localhost:9001/person";
+        return restOperations.getForObject(personResourceUrl, String.class);
     }
-
+    
+    @GetMapping("/person2")
+    public String person2() 
+    {
+        String personResourceUrl = "http://localhost:9002/person";
+        return restOperations.getForObject(personResourceUrl, String.class);
+    }
+    
+    @GetMapping("/person3")
+    public String person3() 
+    {
+        String personResourceUrl = "http://localhost:9002/person3";
+        return restOperations.getForObject(personResourceUrl, String.class);
+    }
 }

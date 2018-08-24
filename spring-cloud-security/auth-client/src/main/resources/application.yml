@@ -14,21 +14,21 @@ security:
       clientId: authserver
       clientSecret: passwordforauthserver
     resource:
-      userInfoUri: http://localhost:9000/user
+      userInfoUri: http://localhost:9001/user
 
-person:
-  url: http://localhost:9000/person
+#person:
+#  url: http://localhost:9001/person
 
 # Proxies the calls to http://localhost:8080/api/* to our REST service at http://localhost:8081/*
 # and automatically includes our OAuth2 token in the request headers
-zuul:
-  routes:
-    resource:
-      path: /api/**
-      url: http://localhost:9000
-    user: 
-      path: /user/**
-      url: http://localhost:9000/user
+#zuul:
+#  routes:
+#    resource:
+#      path: /api/**
+#      url: http://localhost:9001
+#    user: 
+#      path: /user/**
+#      url: http://localhost:9001/user
 
 # Make sure the OAuth2 token is only relayed when using the internal API,
 # do not pass any authentication to the external API

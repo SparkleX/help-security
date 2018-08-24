@@ -1,7 +1,7 @@
 # Make the application available at http://localhost:9000
 
 server:
-  port: 9001
+  port: 9002
 
 # Configure the public key to use for verifying the incoming JWT tokens
 security:
@@ -18,4 +18,4 @@ security:
             T6P5RK7Rj06zoG45DMGWG3DQv6o1/Jm4IJQWj0AUD3bSHqzXkPr7qyMYvkE4kyMH
             6aVAsAYMxilZFlJMv2b8N883gdi3LEeOJo8zZr5IWyyROfepdeOL7UkAXddAj+dL
             WQIDAQAB
-            -----END PUBLIC KEY-----     
+            -----END PUBLIC KEY-----
