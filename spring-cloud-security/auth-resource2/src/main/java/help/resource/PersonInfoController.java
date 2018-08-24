@@ -1,10 +1,8 @@
-package com.baeldung.controller;
+package help.resource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -25,7 +23,8 @@ public class PersonInfoController
     {
         return "personInfo : 2";
     }
-    @GetMapping("/person3")
+    
+    @GetMapping("/callOtherServiceByTemplate")
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public @ResponseBody String callOtherServiceViaTemplate() 
     {
@@ -38,6 +37,8 @@ public class PersonInfoController
     	headers.set("Authorization", "Bearer "+token);
     	HttpEntity<String> entity = new HttpEntity<String>(headers);
         String personResourceUrl = "http://localhost:9001/person";
-       return restOperations.exchange(personResourceUrl,HttpMethod.GET, entity, String.class).getBody();
+        String data = restOperations.exchange(personResourceUrl,HttpMethod.GET, entity, String.class).getBody();
+        
+        return "resource 2 call resource 1 return : " + data;
     } 
 }

@@ -1,4 +1,4 @@
-package com.baeldung.filters;
+package help.oauth.gateway;
 
 import javax.servlet.http.HttpServletRequest;
 import com.netflix.zuul.context.RequestContext;

@@ -1,4 +1,4 @@
-package com.baeldung.config;
+package help.oauth.server;
 
 import java.security.KeyPair;
 

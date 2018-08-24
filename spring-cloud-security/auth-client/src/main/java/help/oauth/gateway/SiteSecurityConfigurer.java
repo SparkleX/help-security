@@ -1,4 +1,4 @@
-package com.baeldung.config;
+package help.oauth.gateway;
 
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
@@ -40,7 +40,8 @@ public class SiteSecurityConfigurer
     }
 
     @Bean
-    public OAuth2RestOperations restOperations(
+    public OAuth2RestOperations restOperations
+    (
         OAuth2ProtectedResourceDetails resource,
         OAuth2ClientContext context) {
         return new OAuth2RestTemplate(resource, context);

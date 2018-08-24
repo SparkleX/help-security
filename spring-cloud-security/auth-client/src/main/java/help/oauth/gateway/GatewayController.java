@@ -1,42 +1,42 @@
-package com.baeldung.controller;
+package help.oauth.gateway;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestOperations;
-import org.springframework.web.servlet.ModelAndView;
 
 @RestController
-public class CloudSiteController {
+public class GatewayController {
 
     @Autowired
     private RestOperations restOperations;
 
     @GetMapping("/")
     @ResponseBody
-    public String helloFromBaeldung() {
+    public String helloFromBaeldung() 
+    {
         return "Hello From Baeldung!";
     }
 
-    @GetMapping("/person1")
+    @GetMapping("/test1")
     public String person1() 
     {
         String personResourceUrl = "http://localhost:9001/person";
         return restOperations.getForObject(personResourceUrl, String.class);
     }
     
-    @GetMapping("/person2")
+    @GetMapping("/test2")
     public String person2() 
     {
         String personResourceUrl = "http://localhost:9002/person";
         return restOperations.getForObject(personResourceUrl, String.class);
     }
     
-    @GetMapping("/person3")
+    @GetMapping("/test3")
     public String person3() 
     {
-        String personResourceUrl = "http://localhost:9002/person3";
+        String personResourceUrl = "http://localhost:9002/callOtherServiceByTemplate";
         return restOperations.getForObject(personResourceUrl, String.class);
     }
 }

@@ -1,4 +1,4 @@
-package com.baeldung.config;
+package help.resource;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;

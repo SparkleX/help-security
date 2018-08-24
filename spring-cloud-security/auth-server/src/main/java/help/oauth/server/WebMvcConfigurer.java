@@ -1,4 +1,4 @@
-package com.baeldung.config;
+package help.oauth.server;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

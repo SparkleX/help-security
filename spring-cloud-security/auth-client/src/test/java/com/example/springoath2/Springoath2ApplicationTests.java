@@ -5,10 +5,10 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.baeldung.CloudSite;
+import help.oauth.gateway.GatewayApp;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = CloudSite.class)
+@SpringBootTest(classes = GatewayApp.class)
 public class Springoath2ApplicationTests {
 
 	@Test

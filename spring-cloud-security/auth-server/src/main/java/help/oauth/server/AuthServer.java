@@ -1,4 +1,4 @@
-package com.baeldung;
+package help.oauth.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.*;

@@ -1,17 +1,15 @@
-package com.baeldung;
+package help.oauth.gateway;
 
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.baeldung.filters.SimpleFilter;
-
 
 @SpringBootApplication
-public class CloudSite {
+public class GatewayApp {
     public static void main(String[] args) {
-        SpringApplication.run(CloudSite.class, args);
+        SpringApplication.run(GatewayApp.class, args);
     }    
     
     @Bean
