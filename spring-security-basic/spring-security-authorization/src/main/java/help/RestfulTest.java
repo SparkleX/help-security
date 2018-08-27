@@ -1,5 +1,6 @@
 package help;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ public class RestfulTest
         return "test1";
     }
     
+    @PreAuthorize("hasAnyRole('ADMIN', 'XXXX')")
     @RequestMapping("/test2")
     public String test2() 
     {

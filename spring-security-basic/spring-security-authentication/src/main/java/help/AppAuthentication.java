@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class AppAuthorization 
+public class AppAuthentication 
 {
 	public static void main(String[] args) 
 	{
-		SpringApplication.run(AppAuthorization.class, args);
+		SpringApplication.run(AppAuthentication.class, args);
 	}
 }
