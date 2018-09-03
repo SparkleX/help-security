@@ -1,0 +1,1 @@
+keytool -certreq -alias jwtkey -keyalg RSA -dname "CN=sunxufei, OU=B1, O=SAP, L=Pudong, ST=Shanghai, C=CN" -keypass keypassword -keystore server.jks -storepass 12345678
