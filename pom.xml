@@ -13,6 +13,7 @@
 		<module>spring-oauth-sso</module>
 		<module>spring-cloud-security</module>
 		<module>spring-security-basic</module>
+		<module>spring-jwt</module>
 	</modules>
 
 	<dependencyManagement>
