@@ -11,5 +11,7 @@
   	<module>spring-saml-sso-server</module>
   	<module>spring-saml-sso.ui</module>
   	<module>spring-saml-sso-ui</module>
+  	<module>spring-saml-idp</module>
+  	<module>spring-saml-sp</module>
   </modules>
 </project>
