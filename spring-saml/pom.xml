@@ -14,5 +14,6 @@
   	<module>spring-saml-idp</module>
   	<module>spring-saml-sp</module>
   	<module>help-saml</module>
+  	<module>help-open-saml</module>
   </modules>
 </project>
