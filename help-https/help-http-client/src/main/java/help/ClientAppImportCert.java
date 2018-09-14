@@ -39,12 +39,12 @@ public class ClientAppImportCert
 	{
 		
 		KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
-		FileInputStream instream = new FileInputStream(new File("tomcat.keystore"));
+		FileInputStream instream = new FileInputStream(new File("tomcat.jks"));
 		trustStore.load(instream, "12345678".toCharArray());
 		instream.close();
 		SSLContext sslcontext = SSLContexts.custom().loadTrustMaterial(trustStore, new TrustSelfSignedStrategy()).build();
-		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext, new String[] { "TLSv1" }, null,
-				SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
+		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext);
+//		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext, new String[] { "TLSv1" }, null,SSLConnectionSocketFactory.getDefaultHostnameVerifier());
 		CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
 		HttpGet httpGet = new HttpGet("https://localhost:8443/test");
 		CloseableHttpResponse httpResponse = null;
