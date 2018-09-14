@@ -17,6 +17,7 @@
 		<module>spring-saml</module>
 		<module>help-jwt</module>
 		<module>help-security</module>
+		<module>help-https</module>
 	</modules>
 
 	<dependencyManagement>
