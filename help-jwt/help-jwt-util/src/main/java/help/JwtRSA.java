@@ -33,8 +33,8 @@ public class JwtRSA {
 		publicKey =  RSAUtil.publicKeyFromBase64(base64PublicKey);
 		privateKey =  RSAUtil.privateKeyFromBase64(base64PrivateKey);   */
 		
-		privateKey = RSAUtil.readPrivateKey("keystore.jks", "12345678", "domain", "12345678");
-		publicKey = RSAUtil.readPublicKey("domain.der");
+		privateKey = RSAUtil.readPrivateKey("keystore.jks", "12345678", "jwt", "12345678");
+		publicKey = RSAUtil.readPublicKey("jwt.pem");
 		
 		    
 		String key = build();		
