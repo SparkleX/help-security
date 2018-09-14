@@ -13,5 +13,6 @@
   	<module>spring-saml-sso-ui</module>
   	<module>spring-saml-idp</module>
   	<module>spring-saml-sp</module>
+  	<module>help-saml</module>
   </modules>
 </project>

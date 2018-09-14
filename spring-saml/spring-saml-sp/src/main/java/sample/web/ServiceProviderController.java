@@ -17,10 +17,13 @@
 package sample.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.saml.provider.provisioning.SamlProviderProvisioning;
 import org.springframework.security.saml.provider.service.ServiceProviderService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.security.Principal;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -37,8 +40,11 @@ public class ServiceProviderController {
 	}
 
 	@RequestMapping(value = {"/", "/index", "/logged-in"})
-	public String home() {
+	public String home(Authentication authentication) 
+	{
 		logger.info("Sample SP Application - You are logged in!");
+		String name = authentication.getName();
+		logger.info(name);
 		return "logged-in";
 	}
 

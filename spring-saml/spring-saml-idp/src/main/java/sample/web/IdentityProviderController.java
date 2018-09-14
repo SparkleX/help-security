@@ -29,6 +29,7 @@ public class IdentityProviderController {
 	public String selectProvider() {
 		logger.info("Sample IDP Application - Select an SP to log into!");
 		return "redirect:/saml/idp/select";
+		
 	}
 
 

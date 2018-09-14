@@ -26,6 +26,9 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.saml.provider.SamlServerConfiguration;
 import org.springframework.security.saml.provider.identity.config.SamlIdentityProviderServerBeanConfiguration;
 
+import help.security.MyUserDetailsService;
+
+
 @Configuration
 public class BeanConfig extends SamlIdentityProviderServerBeanConfiguration {
 	private final AppConfig config;
@@ -40,10 +43,12 @@ public class BeanConfig extends SamlIdentityProviderServerBeanConfiguration {
 	}
 
 	@Bean
-	public UserDetailsService userDetailsService() {
+	public UserDetailsService userDetailsService() 
+	{
+		//return new MyUserDetailsService();
 		UserDetails userDetails = User.withDefaultPasswordEncoder()
 			.username("user")
-			.password("password")
+			.password("1234")
 			.roles("USER")
 			.build();
 		return new InMemoryUserDetailsManager(userDetails);

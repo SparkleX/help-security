@@ -11,6 +11,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
+import help.security.MyUserDetailsService;
+
 
 @Configuration
 @EnableWebSecurity
@@ -28,6 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
+            	.antMatchers("/resources/**", "/auth").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -42,9 +45,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
     @Override
     public UserDetailsService userDetailsService() 
     {
-        InMemoryUserDetailsManager inMemoryUserDetailsManager = new InMemoryUserDetailsManager();
-        inMemoryUserDetailsManager.createUser(User.withUsername("user").password(passwordEncoder().encode("1234")).roles("USER").build());
+    	return new MyUserDetailsService();
+        /*InMemoryUserDetailsManager inMemoryUserDetailsManager = new InMemoryUserDetailsManager();
+        inMemoryUserDetailsManager.createUser(User.withUsername("manager").password(passwordEncoder().encode("Initial0")).roles("USER").build());
         inMemoryUserDetailsManager.createUser(User.withUsername("admin").password(passwordEncoder().encode("1234")).roles("ADMIN").build());
-        return inMemoryUserDetailsManager;
+        return inMemoryUserDetailsManager;*/
     }
 }
