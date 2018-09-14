@@ -16,6 +16,7 @@
 		<module>spring-jwt</module>
 		<module>spring-saml</module>
 		<module>help-jwt</module>
+		<module>help-security</module>
 	</modules>
 
 	<dependencyManagement>

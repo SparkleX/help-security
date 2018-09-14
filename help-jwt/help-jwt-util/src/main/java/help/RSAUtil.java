@@ -1,9 +1,13 @@
 package help;
 
+import java.io.FileInputStream;
 import java.security.Key;
 import java.security.KeyFactory;
+import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
@@ -29,5 +33,23 @@ public class RSAUtil
 	    X509EncodedKeySpec spec =new X509EncodedKeySpec(decoded);
 	    KeyFactory kf = KeyFactory.getInstance("RSA");
 	    return kf.generatePublic(spec);
+	}
+	
+	static PrivateKey readPrivateKey(String file, String password, String alias, String aliasPassword) throws Exception
+	{
+		FileInputStream is = new FileInputStream("keystore.jks");
+		KeyStore keystore = KeyStore.getInstance(KeyStore.getDefaultType());
+		keystore.load(is, password.toCharArray());
+		Key key = keystore.getKey(alias, aliasPassword.toCharArray());
+		return (PrivateKey) key;
+	}
+	
+	static PublicKey readPublicKey(String file) throws Exception
+	{
+	    CertificateFactory fact = CertificateFactory.getInstance("X.509");
+	    FileInputStream is = new FileInputStream (file);
+	    X509Certificate cer = (X509Certificate) fact.generateCertificate(is);
+	    PublicKey key = cer.getPublicKey();
+	    return key;
 	}
 }

@@ -19,7 +19,7 @@ public class JwtRSA {
 
 	public static void main(String[] args) throws Exception 
 	{
-		KeyPair kp = RsaProvider.generateKeyPair();
+		/*KeyPair kp = RsaProvider.generateKeyPair();
 		publicKey = kp.getPublic();
 		privateKey = kp.getPrivate();
 	
@@ -31,7 +31,11 @@ public class JwtRSA {
 		System.out.println(base64PublicKey);
 		
 		publicKey =  RSAUtil.publicKeyFromBase64(base64PublicKey);
-		privateKey =  RSAUtil.privateKeyFromBase64(base64PrivateKey);    
+		privateKey =  RSAUtil.privateKeyFromBase64(base64PrivateKey);   */
+		
+		privateKey = RSAUtil.readPrivateKey("keystore.jks", "12345678", "domain", "12345678");
+		publicKey = RSAUtil.readPublicKey("domain.der");
+		
 		    
 		String key = build();		
 		parse(key);

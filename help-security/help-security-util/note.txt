@@ -1,0 +1,5 @@
+keytool -genkeypair -alias domain -keyalg RSA -keystore keystore.jks
+
+keytool -list -v -keystore keystore.jks
+
+keytool -certreq -alias mydomain -keystore keystore.jks -file mydomain.csr
