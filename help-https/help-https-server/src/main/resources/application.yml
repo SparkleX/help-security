@@ -1,7 +1,12 @@
 server:
   port: 8443
   ssl:
-    key-store: tomcat.jks
-    key-store-password: 12345678
+#    key-store: tomcat.jks
+#    key-store-password: 12345678
+    key-store: ${javax.net.ssl.keyStore}
+    key-store-password: ${javax.net.ssl.keyStorePassword}
+    trust-store: ${javax.net.ssl.keyStore}
+    trust-store-password: ${javax.net.ssl.keyStorePassword}
     keyStoreType: JKS
     keyAlias: tomcat    
+    client-auth: need
