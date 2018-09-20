@@ -20,7 +20,7 @@ public class ServerApp
 		System.out.println(System.getProperty("javax.net.ssl.keyStore"));
 		System.out.println(System.getProperty("javax.net.ssl.trustStore"));
 		
-		System.setProperty("javax.net.ssl.keyStore", "tomcat.jks");
+		System.setProperty("javax.net.ssl.keyStore", "server.p12");
 		System.setProperty("javax.net.ssl.keyStorePassword", "12345678");
 		SpringApplication.run(ServerApp.class, args);
 	}

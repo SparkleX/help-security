@@ -24,12 +24,12 @@ public class ClientAppImportCert
 		System.setProperty("javax.net.ssl.MyKeyPass", "12345678");
 		 
 		System.setProperty("javax.net.ssl.keyStoreType", "PKCS12");
-		System.setProperty("javax.net.ssl.trustStore", "tomcat.jks");
-		System.setProperty("javax.net.ssl.trustStoreType", "jks");
+		System.setProperty("javax.net.ssl.trustStore", "server.p12");
+		System.setProperty("javax.net.ssl.trustStoreType", "PKCS12");
 		System.setProperty("javax.net.ssl.trustStorePassword", "12345678");
 		
 		KeyStore keyStore = KeyStore.getInstance("PKCS12");
-        keyStore.load(new FileInputStream(new File("C:\\Users\\sunxufei\\Documents\\GitHub\\help-security\\help-https\\help-http-client\\trust.p12")), "12345678".toCharArray());
+        keyStore.load(new FileInputStream(new File("trust.p12")), "12345678".toCharArray());
        
 		//System.setProperty("javax.net.ssl.trustStoreType", "PKCS12");
 		
@@ -47,7 +47,7 @@ public class ClientAppImportCert
 //		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext, new String[] { "TLSv1" }, null,SSLConnectionSocketFactory.getDefaultHostnameVerifier());
 		//CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
 		CloseableHttpClient httpClient = HttpClients.createSystem();
-		HttpGet httpGet = new HttpGet("https://localhost:8443/test");
+		HttpGet httpGet = new HttpGet("https://mail.spk:8443/test");
 		CloseableHttpResponse httpResponse = null;
 		httpResponse = httpClient.execute(httpGet);
 		HttpEntity httpEntity = httpResponse.getEntity();

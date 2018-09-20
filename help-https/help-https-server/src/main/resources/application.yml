@@ -7,6 +7,6 @@ server:
     key-store-password: ${javax.net.ssl.keyStorePassword}
     trust-store: ${javax.net.ssl.keyStore}
     trust-store-password: ${javax.net.ssl.keyStorePassword}
-    keyStoreType: JKS
-    keyAlias: tomcat    
+    keyStoreType: PKCS12
+    keyAlias: server_cert    
     client-auth: need
