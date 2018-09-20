@@ -8,5 +8,5 @@ server:
     trust-store: ${javax.net.ssl.keyStore}
     trust-store-password: ${javax.net.ssl.keyStorePassword}
     keyStoreType: PKCS12
-    keyAlias: server_cert    
+    keyAlias: server_cert
     client-auth: need

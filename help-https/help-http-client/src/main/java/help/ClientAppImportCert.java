@@ -19,17 +19,17 @@ public class ClientAppImportCert
 {
 	public static void main(String[] args) throws Exception
 	{
-		System.setProperty("javax.net.ssl.keyStore", "trust.p12");
+		System.setProperty("javax.net.ssl.keyStore", "all.p12");
 		System.setProperty("javax.net.ssl.keyStorePassword", "12345678");
 		System.setProperty("javax.net.ssl.MyKeyPass", "12345678");
 		 
 		System.setProperty("javax.net.ssl.keyStoreType", "PKCS12");
-		System.setProperty("javax.net.ssl.trustStore", "server.p12");
+		System.setProperty("javax.net.ssl.trustStore", "all.p12");
 		System.setProperty("javax.net.ssl.trustStoreType", "PKCS12");
 		System.setProperty("javax.net.ssl.trustStorePassword", "12345678");
 		
-		KeyStore keyStore = KeyStore.getInstance("PKCS12");
-        keyStore.load(new FileInputStream(new File("trust.p12")), "12345678".toCharArray());
+		//KeyStore keyStore = KeyStore.getInstance("PKCS12");
+       // keyStore.load(new FileInputStream(new File("trust.p12")), "12345678".toCharArray());
        
 		//System.setProperty("javax.net.ssl.trustStoreType", "PKCS12");
 		

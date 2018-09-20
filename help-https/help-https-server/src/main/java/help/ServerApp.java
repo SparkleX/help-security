@@ -17,11 +17,10 @@ public class ServerApp
 	}
 	public static void main(String[] args) 
 	{
-		System.out.println(System.getProperty("javax.net.ssl.keyStore"));
-		System.out.println(System.getProperty("javax.net.ssl.trustStore"));
-		
-		System.setProperty("javax.net.ssl.keyStore", "server.p12");
+		System.setProperty("javax.net.ssl.keyStore", "all.p12");
 		System.setProperty("javax.net.ssl.keyStorePassword", "12345678");
+		System.setProperty("javax.net.ssl.MyKeyPass", "12345678");
+
 		SpringApplication.run(ServerApp.class, args);
 	}
 }
