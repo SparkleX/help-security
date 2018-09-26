@@ -14,5 +14,6 @@
 	<modules>
 		<module>help-https-server</module>
 		<module>help-http-client</module>
+		<module>help-nginx</module>
 	</modules>
 </project>
