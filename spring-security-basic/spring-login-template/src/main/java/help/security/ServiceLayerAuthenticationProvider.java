@@ -18,15 +18,12 @@ public class ServiceLayerAuthenticationProvider implements AuthenticationProvide
 	{
 
 		String name = authentication.getName();
-		ServiceLayerAuthenticationDetails details = (ServiceLayerAuthenticationDetails)authentication.getDetails();
+		MyUserDetails details = (MyUserDetails)authentication.getDetails();
 		String password = authentication.getCredentials().toString();
-		if (password.equals("Initial0") == false)
-		{
-			throw new BadCredentialsException("");
-		}
 	//	String company = details.getCompany();
 		String sessionId = "SESSION-ID-FROM-SERVICE_LAYER";
-		return new ServiceLayerAuthenticationToken(authentication.getPrincipal(), password, sessionId, new ArrayList<>());
+		authentication.setAuthenticated(true);
+		return authentication;//new ServiceLayerAuthenticationToken(authentication.getPrincipal(), password);
 	}
 
 	@Override

@@ -24,8 +24,8 @@ public class ServiceLayerSession implements Session
 		{
 			return null;
 		}
-		ServiceLayerAuthenticationToken auth = 
-				new ServiceLayerAuthenticationToken("manager", null, "SBODEMOUS", null, new ArrayList<>());
+		MyAuthenticationToken auth = 
+				new MyAuthenticationToken(null, null);
 		SecurityContextImpl rt = new SecurityContextImpl(auth);
 		return (T) rt;
 

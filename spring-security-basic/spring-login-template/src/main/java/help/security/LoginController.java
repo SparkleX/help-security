@@ -41,8 +41,8 @@ public class LoginController
 	{
 		MyUserDetails userDetails = ((MyUserDetailsService)userDetailsService).loadUserByUsername(loginForm.getServer(), loginForm.getCompany(), loginForm.getUsername());
 		
-		ServiceLayerAuthenticationToken usernamePasswordAuthenticationToken 
-		= new ServiceLayerAuthenticationToken(userDetails, loginForm.getPassword(),null,null);
+		MyAuthenticationToken usernamePasswordAuthenticationToken 
+		= new MyAuthenticationToken(userDetails, loginForm.getPassword());
 		Authentication auth = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 		
 		SecurityContextHolder.getContext().setAuthentication(auth); 

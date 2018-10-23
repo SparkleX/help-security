@@ -12,7 +12,8 @@ public class MyUserDetailsService implements UserDetailsService
 	}
 	public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException 
 	{
-		return new MyUserDetails(name);
+		throw new RuntimeException();
+		//return new MyUserDetails(name);
 	}
 	public MyUserDetails loadUserByUsername(String server, String company, String name) throws UsernameNotFoundException 
 	{
